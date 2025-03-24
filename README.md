@@ -65,6 +65,7 @@ Some people have invested way more time into the Game of Life and created extrem
 - [A Simple CPU on the Game of Life](https://nicholas.carlini.com/writing/2021/unlimited-register-machine-game-of-life.html), by Nicholas Carlini
 - [OTCA metapixel](https://conwaylife.com/wiki/OTCA_metapixel), by Brice Due
 - [Life in Life](https://github.com/mrphlip/life3/tree/main/life2), by Phillip Bradbury
+- [Lifeviewer](https://github.com/rowett/lifeviewer), by Chris Rowett
 
 ## References
 
