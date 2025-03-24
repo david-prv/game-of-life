@@ -8,7 +8,7 @@ A simple browser-based implementation of the famous conway's game of life
 
 "Conway's Game of Life, also known as the Game of Life or simply Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is the best-known example of a cellular automaton" [[1]](https://conwaylife.com/wiki/Conway%27s_Game_of_Life).
 
-You can learn more about the history, theory and patterns here: [conwaylife.com](https://conwaylife.com/wiki/Conway%27s_Game_of_Life). I strongly recommend spending some time exploring the world of GoL.
+This little project is nothing more than my doorway into that topic. You can learn more about the history, theory and patterns here: [conwaylife.com](https://conwaylife.com/wiki/Conway%27s_Game_of_Life). I strongly recommend spending some time exploring the world of GoL. It is much more complex and interesting than you might suspect it to be.
 
 ## Implementation
 There are two main components: `Cell` which represents a single square on the canvas and `Grid` which is essentially an improved Array. The additional functionality of the grids allow us to easily observe the surrounding neighbors or a pixel, to calculate the new states for each cell dynamically and finally to shift the states per element to the new one. A cell can either be *alive* or *dead*. These states are calculated based on the surrounding neighbors (compare below).
