@@ -66,6 +66,7 @@ Some people have invested way more time into the Game of Life and created extrem
 - [OTCA metapixel](https://conwaylife.com/wiki/OTCA_metapixel), by Brice Due
 - [Life in Life](https://github.com/mrphlip/life3/tree/main/life2), by Phillip Bradbury
 - [Lifeviewer](https://github.com/rowett/lifeviewer), by Chris Rowett
+- [CubicLife](https://github.com/ms0g/cubicLife), by M. Sami Gürpınar
 
 ## References
 
