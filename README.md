@@ -34,7 +34,9 @@ if cell.is_dead():
         cell.give_birth()
         break
 ```
-<center>Sources: <a href="https://rustwasm.github.io/book/game-of-life/rules.html">Rules of Conway's Game of Life</a>, <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia: Conway's Game of Life</a></center>
+<p align="center">
+    Sources: <a href="https://rustwasm.github.io/book/game-of-life/rules.html">Rules of Conway's Game of Life</a>, <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia: Conway's Game of Life</a>
+</p>
 
 ### Configuration
 
