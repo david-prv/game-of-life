@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life</title>
+</head>
+<body>
+    <h1>Game of Life</h1>
+    <p>Generation: <b id="generation">0</b></p>
+    <p>Seed: <b id="seed"></b></p>
+    <button id="toggleButton">Toggle</button>
+    <br><br>
+    <canvas id="gameCanvas" width="800" height="600" style="border:1px solid #000;"></canvas>
+    <script type="text/javascript">
+        /* game configuration */
+
+        const HEIGHT = 150;
+        const WIDTH = 200;
+
+        const CELL_HEIGHT = 5;
+        const CELL_WIDTH = 5;
+
+        const UPDATE_INTERVAL = 100;
+
+        const RANDOM_SEED = Math.round(Math.random() * (10 ** 16));
+        const ALIVE_PROBABILITY = .3;
+    </script>
+    <script src="components/grid.js"></script>
+    <script src="components/cell.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
