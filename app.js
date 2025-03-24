@@ -10,8 +10,8 @@ function createContext() {
     context = canvas.getContext('2d');
 }
 
-function initializeGrid() {
-    var random = (seed) => {
+function createGrid() {
+    let random = (seed) => {
         let x = Math.sin(seed++) * 10000;
         return x - Math.floor(x);
     };
@@ -23,38 +23,13 @@ function initializeGrid() {
             grid[y].push(new Cell(x, y, alive, context, grid));
         }
     }
-
-    console.log(grid);  
-}
-
-function drawCells() {
-    for (let y = 0; y < HEIGHT; y++) {
-        for (let x = 0; x < WIDTH; x++) {
-            grid[y][x].draw();
-        }
-    }
-}
-
-function updateCells() {
-    for (let y = 0; y < HEIGHT; y++) {
-        for (let x = 0; x < WIDTH; x++) {
-            grid[y][x].update();
-        }
-    }
-
-    for (let y = 0; y < HEIGHT; y++) {
-        for (let x = 0; x < WIDTH; x++) {
-            grid[y][x].state = grid[y][x].nextState;
-        }
-    }
-
-    drawCells();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     createContext();
-    initializeGrid();
-    drawCells();
+    createGrid();
+    
+    grid.draw();
 
     document.getElementById('seed').innerText = RANDOM_SEED;
 });
@@ -66,7 +41,8 @@ document.getElementById('toggleButton').addEventListener('click', () => {
     } else {
         running = true;
         game_loop = setInterval(() => {
-            updateCells();
+            grid.update();
+            grid.draw();
             generation++;
 
             document.getElementById('generation').innerText = generation;

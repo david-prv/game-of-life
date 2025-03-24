@@ -28,16 +28,18 @@ class Cell {
     }
 
     repOk() {
-        console.assert(this.ctx,        "CanvasRenderingContext2D is required.");
-        console.assert(this.width > 0,  "Width must be greater than 0.");
-        console.assert(this.height > 0, "Height must be greater than 0."); 
-        console.assert(this.colorAlive, "Color for alive cells is required.");
-        console.assert(this.colorDead,  "Color for dead cells is required.");
-        console.assert(this.colorGrid,  "Color for grid is required.");
-        console.assert(this.x >= 0,     "X must be greater or equal to 0.");
-        console.assert(this.y >= 0,     "Y must be greater or equal to 0.");
-        console.assert(this.x < WIDTH,  "X must be less than WIDTH.");
-        console.assert(this.y < HEIGHT, "Y must be less than HEIGHT.");
+        console.assert(this.ctx,                        "CanvasRenderingContext2D is required.");
+        console.assert(this.width > 0,                  "Width must be greater than 0.");
+        console.assert(this.height > 0,                 "Height must be greater than 0."); 
+        console.assert(this.colorAlive,                 "Color for alive cells is required.");
+        console.assert(this.colorDead,                  "Color for dead cells is required.");
+        console.assert(this.colorGrid,                  "Color for grid is required.");
+        console.assert(this.x >= 0,                     "X must be greater or equal to 0.");
+        console.assert(this.y >= 0,                     "Y must be greater or equal to 0.");
+        console.assert(this.x < WIDTH,                  "X must be less than WIDTH.");
+        console.assert(this.y < HEIGHT,                 "Y must be less than HEIGHT.");
+        console.assert(this.state !== undefined,        "State must be defined.");
+        console.assert(this.nextState !== undefined,    "Next state must be defined.");
     }
 
     update() {
