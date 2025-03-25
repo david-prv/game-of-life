@@ -21,6 +21,7 @@ class Cell {
         this.colorAlive = colorAlive;
         this.colorDead = colorDead;
         this.colorGrid = colorGrid;
+        this.debug = debug;
 
         this.state = alive;
         this.nextState = false;
