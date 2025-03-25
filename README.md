@@ -11,7 +11,7 @@ A simple browser-based implementation of the famous conway's game of life
 This little project is nothing more than my doorway into that topic. You can learn more about the history, theory and patterns here: [conwaylife.com](https://conwaylife.com/wiki/Conway%27s_Game_of_Life). I strongly recommend spending some time exploring the world of GoL. It is much more complex and interesting than you might suspect it to be.
 
 ## Implementation
-There are two main components: `Cell` which represents a single square on the canvas and `Grid` which is essentially an improved Array. The additional functionality of the grids allow us to easily observe the surrounding neighbors or a pixel, to calculate the new states for each cell dynamically and finally to shift the states per element to the new one. A cell can either be *alive* or *dead*. These states are calculated based on the surrounding neighbors (compare below).
+There are two main components: `Cell` which represents a single square on the canvas and `Grid` which is essentially an improved Array. The additional functionality of the grids allow us to easily observe the surrounding neighbors of a pixel, to calculate the new states for each cell dynamically and finally to shift the states per element to the new one. A cell can either be *alive* or *dead*. These states are calculated based on the surrounding neighbors (compare below).
 
 `app.js` assembles these two components, whereas `createContext` initializes the canvas we want to draw on and `createGrid` creates a random start pattern that is filled into the grid.
 
