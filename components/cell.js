@@ -9,7 +9,8 @@ class Cell {
         height = CELL_HEIGHT,   // The cell height in pixels
         colorAlive = "black",   // Color of a live cell
         colorDead = "white",    // Color of a dead cell
-        colorGrid = "gray"      // Color of the grid lines
+        colorGrid = "gray",     // Color of the grid lines
+        debug = false           // Debugging flag
     ) { 
         this.x = x;
         this.y = y;
@@ -28,18 +29,31 @@ class Cell {
     }
 
     repOk() {
-        console.assert(this.ctx,                        "CanvasRenderingContext2D is required.");
-        console.assert(this.width > 0,                  "Width must be greater than 0.");
-        console.assert(this.height > 0,                 "Height must be greater than 0."); 
-        console.assert(this.colorAlive,                 "Color for alive cells is required.");
-        console.assert(this.colorDead,                  "Color for dead cells is required.");
-        console.assert(this.colorGrid,                  "Color for grid is required.");
-        console.assert(this.x >= 0,                     "X must be greater or equal to 0.");
-        console.assert(this.y >= 0,                     "Y must be greater or equal to 0.");
-        console.assert(this.x < WIDTH,                  "X must be less than WIDTH.");
-        console.assert(this.y < HEIGHT,                 "Y must be less than HEIGHT.");
-        console.assert(this.state !== undefined,        "State must be defined.");
-        console.assert(this.nextState !== undefined,    "Next state must be defined.");
+        if (!this.debug) return;
+        console.assert(Number.isInteger(this.x),                        "X must be a number.");
+        console.assert(Number.isInteger(this.y),                        "Y must be a number.");
+        console.assert(this.x >= 0,                                     "X must be greater or equal to 0.");
+        console.assert(this.y >= 0,                                     "Y must be greater or equal to 0.");
+        console.assert(this.x < WIDTH,                                  "X must be less than WIDTH.");
+        console.assert(this.y < HEIGHT,                                 "Y must be less than HEIGHT.");
+        console.assert(this.ctx,                                        "CanvasRenderingContext2D is required.");
+        console.assert(this.ctx instanceof CanvasRenderingContext2D,    "ctx must be a CanvasRenderingContext2D.");
+        console.assert(this.grid,                                       "Grid is required.");
+        console.assert(this.grid instanceof Grid,                       "Grid must be a Grid.");
+        console.assert(this.width > 0,                                  "Width must be greater than 0.");
+        console.assert(this.height > 0,                                 "Height must be greater than 0."); 
+        console.assert(Number.isInteger(this.width),                    "Width must be an integer.");
+        console.assert(Number.isInteger(this.height),                   "Height must be an integer.");
+        console.assert(this.colorAlive,                                 "Color for alive cells is required.");
+        console.assert(typeof this.colorAlive == "string",              "Color for alive cells must be a string.");
+        console.assert(this.colorDead,                                  "Color for dead cells is required.");
+        console.assert(typeof this.colorDead == "string",               "Color for dead cells must be a string.");
+        console.assert(this.colorGrid,                                  "Color for grid is required.");
+        console.assert(typeof this.colorGrid == "string",               "Color for grid must be a string.");
+        console.assert(this.state !== undefined,                        "State must be defined.");
+        console.assert(typeof this.state == "boolean",                  "State must be a boolean.");
+        console.assert(this.nextState !== undefined,                    "Next state must be defined.");
+        console.assert(typeof this.nextState == "boolean",              "Next state must be a boolean.");
     }
 
     tick() {
