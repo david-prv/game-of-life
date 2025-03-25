@@ -22,7 +22,7 @@ class Grid extends Array {
     _nextState() {
         for (let y = 0; y < this.length; y++) {
             for (let x = 0; x < this[0].length; x++) {
-                this[y][x].state = this[y][x].nextState;
+                this[y][x].tick();
             }
         }
     }

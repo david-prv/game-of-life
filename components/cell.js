@@ -42,6 +42,14 @@ class Cell {
         console.assert(this.nextState !== undefined,    "Next state must be defined.");
     }
 
+    tick() {
+        this.repOk();
+
+        this.state = this.nextState;
+        
+        this.repOk();
+    }
+
     update() {
         this.repOk();
     
