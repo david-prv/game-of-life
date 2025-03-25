@@ -19,29 +19,12 @@ class Grid extends Array {
         return neighbors;
     };
 
-    _nextState() {
-        for (let y = 0; y < this.length; y++) {
-            for (let x = 0; x < this[0].length; x++) {
-                this[y][x].tick();
-            }
-        }
-    }
-
     update() {
-        for (let y = 0; y < this.length; y++) {
-            for (let x = 0; x < this[0].length; x++) {
-                this[y][x].update();
-            }
-        }
-
-        this._nextState();
+        this.forEach(row => row.forEach(cell => cell.update()));
+        this.forEach(row => row.forEach(cell => cell.tick()));
     }
 
     draw() {
-        for (let y = 0; y < this.length; y++) {
-            for (let x = 0; x < this[0].length; x++) {
-                this[y][x].draw();
-            }
-        }
+        this.forEach(row => row.forEach(cell => cell.draw()));
     }
 }
